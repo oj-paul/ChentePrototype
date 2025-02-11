@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:local="clr-namespace:Chente.Desktop.Views"
+             xmlns:local="clr-namespace:Chente.Desktop.Views" xmlns:controls="clr-namespace:Chente.Desktop.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <materialDesign:Card VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="400" Margin="8" Padding="32">
@@ -27,7 +27,7 @@
 
                 <TextBox Grid.Row="0" Grid.Column="0" MinWidth="200" Margin="0,16" x:Name="UsernameTextBox" Text="{Binding EmailAddress, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Email address"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" MinWidth="200" Margin="0,16" Name="PasswordTextBox" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Password"/>
+                <controls:BindablePasswordBox Grid.Row="1" Grid.Column="0" MinWidth="200" Margin="0,16" x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="Password" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
             </Grid>
 
